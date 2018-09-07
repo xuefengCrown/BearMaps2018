@@ -31,15 +31,14 @@ public class QuadTree {
         if(p.getDepth() == 7){
             return p;
         }
-        // p与三个兄弟块
+        String sufixOfX = ParseImgName.sufixOfX(p.getName());
+        String sufixOfY = ParseImgName.sufixOfY(p.getName());
+        int depth = p.getDepth() + 1;
+		// p的四个分支
         Tile nw4p = new Tile();
         Tile ne4p = new Tile();
         Tile sw4p = new Tile();
         Tile se4p = new Tile();
-
-        String sufixOfX = ParseImgName.sufixOfX(p.getName());
-        String sufixOfY = ParseImgName.sufixOfY(p.getName());
-        int depth = p.getDepth() + 1;
 
         nw4p.setDepth(depth);
         ne4p.setDepth(depth);
